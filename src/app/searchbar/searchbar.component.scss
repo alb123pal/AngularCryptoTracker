@@ -1,0 +1,14 @@
+.searchbar {
+  float: right;
+  margin-right: 4%;
+  margin-bottom: 15px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  padding: 0.5em 0.6em;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  &:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
+}

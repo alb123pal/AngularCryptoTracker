@@ -1,3 +1,25 @@
-<p>
-  coin-list works!
-</p>
+<div class="coin-list-container">
+    <h1 class="coin-list-container__table-title">Cryptocurriencies</h1>
+    <app-searchbar (notifySearchCurrency)="filterCurrency($event)"></app-searchbar>
+    <table class="coin-list-container__table" *ngIf="filteredListCoins.length > 0">
+        <thead>
+        <tr>
+            <th class="coin-list-container__cell--large">Name</th>
+            <th class="coin-list-container__cell--small">Change</th>
+            <th class="coin-list-container__cell--small">Acronym</th>
+            <th class="coin-list-container__cell--large">Market Cap</th>
+            <th class="coin-list-container__cell--small">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let coin of filteredListCoins">
+                <th class="coin-list-container__cell--large">{{coin.name}}</th>
+                <th class="coin-list-container__cell--small coin-list-container__cell--green">{{coin.change}}</th>
+                <th class="coin-list-container__cell--small">{{coin.acronym}}</th>
+                <th class="coin-list-container__cell--large">{{coin.marketCap}}</th>
+                <th class="coin-list-container__cell--small">{{coin.price}}</th>
+            </tr>
+        </tbody>
+    </table>
+    <span *ngIf="!(filteredListCoins.length > 0)">Brak wyników dla wprowadzonej frazy</span>
+</div>
